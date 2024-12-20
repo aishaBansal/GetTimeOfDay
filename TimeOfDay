@@ -1,0 +1,22 @@
+func getTimeOfDay() -> String{
+        let hour =  Calendar.current.component(.hour, from: Date())
+        var timeOfDay = ""
+        switch hour {
+        case 6..<12 :
+            timeOfDay = "Morning"
+            print(NSLocalizedString("Morning", comment: "Morning"))
+        case 12 :
+            timeOfDay = "Noon"
+            print(NSLocalizedString("Noon", comment: "Noon"))
+        case 13..<17 :
+            timeOfDay = "Afternoon"
+            print(NSLocalizedString("Afternoon", comment: "Afternoon"))
+        case 17..<22 :
+            timeOfDay = "Evening"
+            print(NSLocalizedString("Evening", comment: "Evening"))
+        default:
+            timeOfDay = "Night"
+            print(NSLocalizedString("Night", comment: "Night"))
+        }
+        return timeOfDay
+    }
